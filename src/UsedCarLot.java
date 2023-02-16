@@ -37,6 +37,7 @@ ArrayList<Car> parkingLot;
     public void addCar(int indexToAdd, Car carToAdd)
     {
         parkingLot.add(indexToAdd,carToAdd);
+
     }
 
     /* "sells" the Car located at indexOfCarToSell which
@@ -84,11 +85,9 @@ ArrayList<Car> parkingLot;
      */
     public void moveCar(int indexOfCarToMove, int destinationIndex)
     {
-        if (destinationIndex > indexOfCarToMove){
-            parkingLot.add(destinationIndex+1,parkingLot.get(indexOfCarToMove));
-        }else if(destinationIndex < indexOfCarToMove){
-            parkingLot.add(destinationIndex,parkingLot.get(indexOfCarToMove));
-        }
+            Car car1 = parkingLot.remove(indexOfCarToMove);
+            parkingLot.add(destinationIndex,car1);
+
     }
 
 }
